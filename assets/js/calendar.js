@@ -294,16 +294,25 @@ function createDays(date, thisYear, thisDay, thisDayofWeek) {
   //Create Calendar
   for (let i = 0; i < Year.Months[dislayDateChanger].days; ++i) {
     let calNum = i + 1;
-    let day = document.createElement("div");
+    let dayForm = document.createElement("form");
+    dayForm.setAttribute("method", "get");
+    dayForm.setAttribute("action", "/appointments");
+    let day = document.createElement("button");
     let newId =
       Year.Months[dislayDateChanger].name + "-" + calNum + "-" + thisYear;
 
+    let idForForm = document.createElement("input");
+    idForForm.setAttribute("style", "display: none");
+    idForForm.innerHTML = newId;
+
     day.classList.add("grid-item", "day", "container");
     day.innerHTML = calNum;
-    day.setAttribute("style", "margin-top: 30px; margin-bottom:20px");
+    day.setAttribute("style", "margin-top: 10px; margin-bottom:10px");
     day.setAttribute("id", newId);
-
-    calendar.appendChild(day);
+    day.setAttribute("type", "submit");
+    dayForm.appendChild(idForForm);
+    dayForm.appendChild(day);
+    calendar.appendChild(dayForm);
   }
   document.querySelector("#days").appendChild(calendar);
 }
@@ -318,5 +327,4 @@ function minusCalDay() {
   setDates(dislayDateChanger);
 }
 
-function addNewAppt(newAppt) {}
 setDates();

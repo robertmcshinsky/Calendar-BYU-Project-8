@@ -55,3 +55,16 @@
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
 }
+form {
+  z-index: 1000;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 50px;
+  border-radius: 10px;
+}
+.day:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}

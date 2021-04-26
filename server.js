@@ -18,6 +18,10 @@ app.post("/calendar", function (req, res) {
   res.sendFile(path.join(__dirname, "/assets/pages/calendar.html"));
 });
 
+app.get("/appointments", function (req, res) {
+  res.sendFile(path.join(__dirname, "/assets/pages/appointments.html"));
+});
+
 app.post("/credentials", function (req, res) {
   res.sendFile(path.join(__dirname, "/assets/pages/creds.html"));
 });
