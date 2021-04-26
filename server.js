@@ -3,7 +3,9 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const Year = require("./assets/js/year.json");
+const port = process.env.PORT || 3000;
 
+console.log("Yo");
 app.use(express.static("assets"));
 app.use(express.static(path.join(__dirname, "assets")));
 console.log(moment().format("dddd"));
@@ -20,6 +22,6 @@ app.post("/credentials", function (req, res) {
   res.sendFile(path.join(__dirname, "/assets/pages/creds.html"));
 });
 ////////////////////////////////
-app.listen(3001, function () {
+app.listen(port, function () {
   console.log("Listening");
 });
