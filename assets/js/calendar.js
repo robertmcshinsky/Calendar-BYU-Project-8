@@ -18,7 +18,7 @@ const Year = {
     },
     {
       name: "February",
-      days: "30",
+      days: "28",
       holidays: [
         {
           name: "ABC holiday",
@@ -102,7 +102,7 @@ const Year = {
     },
     {
       name: "August",
-      days: "30",
+      days: "31",
       holidays: [
         {
           name: "ABC holiday",
@@ -116,7 +116,7 @@ const Year = {
     },
     {
       name: "September",
-      days: "31",
+      days: "30",
       holidays: [
         {
           name: "ABC holiday",
@@ -130,20 +130,6 @@ const Year = {
     },
     {
       name: "October",
-      days: "30",
-      holidays: [
-        {
-          name: "ABC holiday",
-          date: 10,
-        },
-        {
-          name: "DEF holiday",
-          date: 20,
-        },
-      ],
-    },
-    {
-      name: "November",
       days: "31",
       holidays: [
         {
@@ -157,8 +143,22 @@ const Year = {
       ],
     },
     {
-      name: "December",
+      name: "November",
       days: "30",
+      holidays: [
+        {
+          name: "ABC holiday",
+          date: 10,
+        },
+        {
+          name: "DEF holiday",
+          date: 20,
+        },
+      ],
+    },
+    {
+      name: "December",
+      days: "31",
       holidays: [
         {
           name: "ABC holiday",
@@ -288,6 +288,7 @@ function createDays(date, thisYear, thisDay, thisDayofWeek) {
   for (let h = 0; h < spacerDays; h++) {
     let newSpacerDays = document.createElement("div");
     newSpacerDays.classList.add("grid-item", "day", "container");
+    newSpacerDays.setAttribute("style", "visibility: hidden");
     calendar.appendChild(newSpacerDays);
   }
 
